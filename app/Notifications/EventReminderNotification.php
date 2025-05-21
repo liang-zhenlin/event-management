@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use App\Models\Event;
 
 class EventReminderNotification extends Notification
 {
@@ -14,9 +15,11 @@ class EventReminderNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct(
+        public Event $event
+    )
     {
-        //
+
     }
 
     /**
